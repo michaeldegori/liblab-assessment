@@ -41,20 +41,17 @@ Access the endpoints
 
 ```javascript
 // Get all movies
-theOne
-  .getAllMovies()
+getAllMovies()
   .then((movies) => console.log(movies))
   .catch((error) => console.error(error));
 
 // Get movie by id
-theOne
-  .getMovieById('5f569a14ebd5af5b5c73b1e5')
+getMovieById('5f569a14ebd5af5b5c73b1e5')
   .then((movie) => console.log(movie))
   .catch((error) => console.error(error));
 
 // Get quotes by movie id
-theOne
-  .getQuotesByMovieId({ id: '5f569a14ebd5af5b5c73b1e5', options: { limit: 10, page: 1 } })
+getQuotesByMovieId({ id: '5f569a14ebd5af5b5c73b1e5', options: { limit: 10, page: 1 } })
   .then((quotes) => console.log(quotes))
   .catch((error) => console.error(error));
 ```
