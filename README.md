@@ -19,16 +19,22 @@ You will need to go to `https://the-one-api.dev/sign-up` to get your access toke
 
 ## Usage
 
-Import the SDK
+Import the SDK using default export
 
 ```javascript
-const theOne = require('michael-degori-sdk');
+import theOne from 'michael-degori-sdk';
+```
+
+OR abstracts specific methods
+
+```javascript
+import { initialize, getAllMovies, getMovieById, getQuotesByMovieId } from 'michael-degori-sdk';
 ```
 
 Initialize withAPI token
 
 ```javascript
-theOne.initialize('your-api-token');
+initialize('your-api-token');
 ```
 
 Access the endpoints
@@ -63,7 +69,7 @@ This function fetches all Lord of the Rings movies.
 
 ```javascript
 {
-  docs: [{
+  docs: [{  // An array of movies
     _id: string,
     name: string,
     runtimeInMinutes: number,
