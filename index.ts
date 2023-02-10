@@ -21,7 +21,6 @@ export const initialize = (apiToken: string) => {
  * @throws {Error} If the API token has not been initialized.
  */
 const checkAuth = () => {
-  console.log({ auth: axiosInstance.defaults.headers.common['Authorization'] });
   if (!axiosInstance.defaults.headers.common['Authorization']) {
     throw new Error(
       "You haven't initialized your token yet. Go to the README for more information on setup."
