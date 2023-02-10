@@ -42,8 +42,7 @@ export const getAllMovies = async (): Promise<object> => {
     const response = await axiosInstance.get(`${API_URL}/movie`);
     return response.data;
   } catch (error) {
-    handleError(error);
-    throw new Error(`Failed to retrieve movies`);
+    return handleError(error);
   }
 };
 
@@ -59,8 +58,7 @@ export const getMovieById = async (id: string): Promise<object> => {
     const response = await axiosInstance.get(`${API_URL}/movie/${id}`);
     return response.data.docs[0];
   } catch (error) {
-    handleError(error);
-    throw new Error(`Failed to retrieve details for movie: ${id}`);
+    return handleError(error);
   }
 };
 
@@ -83,8 +81,7 @@ export const getQuotesByMovieId = async (
     );
     return response.data;
   } catch (error) {
-    handleError(error);
-    throw new Error(`Failed to retrieve quotes for movie: ${id}`);
+    return handleError(error);
   }
 };
 

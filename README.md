@@ -172,3 +172,16 @@ getQuotesByMovieId('1234', { limit: 10, page: 2 })
     console.error(error);
   });
 ```
+
+## Error Handling
+
+In the event of an error during an API request, the SDK will throw an error with the following shape:
+
+```javascript
+{
+  status: number,  // HTTP status code of the error
+  message: string  // Error message
+}
+```
+
+In addition to throwing the error, the SDK also logs error messages to the console for debugging purposes. The error status code and error message will be logged to the console if the error has a response property. If the error has a request property, the SDK will log a message indicating that no response was received from the server. If neither of these properties is present, the SDK will simply log the error message.
