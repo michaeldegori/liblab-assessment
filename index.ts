@@ -1,10 +1,13 @@
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
+import { handleError } from './utils/handleError';
 
 const API_URL: string = 'https://the-one-api.dev/v2';
 
 const axiosInstance = axios.create({
   headers: { Accept: 'application/json' },
 });
+axiosRetry(axiosInstance, { retries: 3 });
 
 /**
  * Initializes the API token to be used for authentication before accessing any endpoints. Please see README for more details.
@@ -25,19 +28,6 @@ const checkAuth = () => {
     throw new Error(
       "You haven't initialized your token yet. Go to the README for more information on setup."
     );
-  }
-};
-
-const handleError = (error: any) => {
-  console.error(error);
-
-  if (error.response) {
-    console.error(`Error status code: ${error.response.status}`);
-    console.error(`Error message: ${error.response.data.message}`);
-  } else if (error.request) {
-    console.error('Error: No response received from the server');
-  } else {
-    console.error('Error:', error.message);
   }
 };
 
