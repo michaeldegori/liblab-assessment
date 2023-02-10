@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
  * Initializes the API token to be used for authentication before accessing any endpoints. Please see README for more details.
  * @param {String} apiToken Your API token for The One API
  * @example
- * initialize({ apiToken: 'your-api-token' });
+ * initialize('your-api-token');
  */
 export const initialize = (apiToken: string) => {
   axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${apiToken}`;
