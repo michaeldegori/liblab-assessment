@@ -99,6 +99,4 @@ export const getQuotesByMovieId = async (
   }
 };
 
-export default { getAllMovies, getMovieById, getQuotesByMovieId };
-
-// my token: 89b62oFBhBP0yZR3pQZw
+export default { initialize, getAllMovies, getMovieById, getQuotesByMovieId };
