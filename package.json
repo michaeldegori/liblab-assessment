@@ -1,6 +1,6 @@
 {
   "name": "michael-degori-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SDK using Mellon Lord of the Rings API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
